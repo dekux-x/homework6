@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гулдер.kz-Корзина</title>
+</head>
+<body>
+<p>Total: {{total}}</p>
+<form action="/purchased" method="post">
+    <input type="submit" value="Купить">
+</form>
+<br>
+{% for i in cart %}
+<p>ID: {{i["id"]}}</p> <br>
+<p>Name: {{i["name"]}}</p><br>
+<p>Cost: {{i["cost"]}}</p><br>
+{% endfor %}
+</body>
+</html>

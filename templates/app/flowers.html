@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гулдер.kz-Цветы</title>
+</head>
+<body>
+<p>Добавить</p>
+<form action="/flowers" method="post">
+    <p>Name:</p>
+    <input type="text" name="name">
+    <p>Count:</p>
+    <input type="number" name="count">
+    <p>Cost:</p>
+    <input type="number" name="cost"><br>
+    <input type="submit" value="Добавить">
+
+</form><br>
+<a href="/cart/items">Корзина</a><br>
+{% for flower in flowers%}
+<p>Name: {{flower.name}}</p> <br>
+<p>Cost: {{flower.cost}}</p><br>
+<p>Count: {{flower.count}}</p><br>
+<form action="/cart/items" method="post">
+    <button type="submit" name="flower_id" value="{{flower.id}}">Добавить в корзину</button>
+</form>
+{% endfor %}
+</body>
+</html>
